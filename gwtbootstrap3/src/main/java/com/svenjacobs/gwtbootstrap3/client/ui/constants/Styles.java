@@ -46,6 +46,12 @@ public final class Styles {
 
     public static final String CARET = "caret";
 
+    public static final String CAROUSEL = "carousel";
+    public static final String CAROUSEL_CAPTION = "carousel-caption";
+    public static final String CAROUSEL_CONTROL = "carousel-control";
+    public static final String CAROUSEL_INDICATORS = "carousel-indicators";
+    public static final String CAROUSEL_INNER = "carousel-inner";
+
     public static final String CLEARFIX = "clearfix";
 
     public static final String CLOSE = "close";
@@ -79,6 +85,8 @@ public final class Styles {
 
     public static final String HELP_BLOCK = "help-block";
 
+    public static final String ITEM = "item";
+
     public static final String ICON_LIGHT = "fa-light";
     public static final String ICON_MUTED = "fa-muted";
     public static final String ICON_BORDER = "fa-border";
@@ -90,6 +98,11 @@ public final class Styles {
 
     public static final String ICON_BAR = "icon-bar";
 
+    public static final String ICON_PREV = "icon-prev";
+    public static final String ICON_NEXT = "icon-next";
+
+    public static final String IMG_RESPONSIVE = "img-responsive";
+
     public static final String INPUT_GROUP = "input-group";
     public static final String INPUT_GROUP_ADDON = "input-group-addon";
     public static final String INPUT_GROUP_BTN = "input-group-btn";
@@ -99,6 +112,8 @@ public final class Styles {
     public static final String LABEL = "label";
 
     public static final String LEAD = "lead";
+
+    public static final String LEFT = "left";
 
     public static final String LIST_INLINE = "list-inline";
     public static final String LIST_GROUP = "list-group";
@@ -148,11 +163,17 @@ public final class Styles {
     public static final String PULL_LEFT = "pull-left";
     public static final String PULL_RIGHT = "pull-right";
 
+    public static final String RIGHT = "right";
+
     public static final String ROW = "row";
+
+    public static final String SLIDE = "slide";
 
     public static final String SR_ONLY = "sr-only";
 
     public static final String THUMBNAIL = "thumbnail";
+
+    public static final String TOOLTIP = "tooltip";
 
     public static final String WELL = "well";
 
