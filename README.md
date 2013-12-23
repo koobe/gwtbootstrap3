@@ -1,10 +1,10 @@
-[![Build Status](https://buildhive.cloudbees.com/job/svenjacobs/job/gwtbootstrap3/badge/icon)](https://buildhive.cloudbees.com/job/svenjacobs/job/gwtbootstrap3/)
+[![Build Status](https://buildhive.cloudbees.com/job/gwtbootstrap3/job/gwtbootstrap3/badge/icon)](https://buildhive.cloudbees.com/job/gwtbootstrap3/job/gwtbootstrap3/)
 
 GwtBootstrap3 is a GWT wrapper for Twitter's Bootstrap library version 3
 containing design templates, styles and beautiful widgets.
 
-Have a look at the [demo](http://svenjacobs.github.io/gwtbootstrap3/) and its
-[source code](https://github.com/svenjacobs/gwtbootstrap3/tree/master/gwtbootstrap3-demo/src/main/java/com/svenjacobs/gwtbootstrap3/demo/client). Also use the [Google Group](https://groups.google.com/forum/?fromgroups#!forum/gwtbootstrap3) for help/discussion.
+Have a look at the [demo](http://gwtbootstrap3.github.io/gwtbootstrap3-demo/) and its
+[source code](https://github.com/gwtbootstrap3/gwtbootstrap3-demo/tree/master/src/main/java/org/gwtbootstrap3/demo/client). Also use the [Google Group](https://groups.google.com/forum/?fromgroups#!forum/gwtbootstrap3) for help/discussion.
 
 **Note:** This library is **not yet** feature complete. Patches / pull requests are welcome. See *Feature matrix* below.
 
@@ -14,9 +14,9 @@ Add the dependency to your Maven POM:
 
 ```xml
 <dependency>
-    <groupId>com.svenjacobs.gwtbootstrap3</groupId>
+    <groupId>org.gwtbootstrap3</groupId>
     <artifactId>gwtbootstrap3</artifactId>
-    <version>0.3</version>
+    <version>0.4</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -25,9 +25,9 @@ or if you want to use the snapshot release:
 
 ```xml
 <dependency>
-    <groupId>com.svenjacobs.gwtbootstrap3</groupId>
+    <groupId>org.gwtbootstrap3</groupId>
     <artifactId>gwtbootstrap3</artifactId>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.5-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -54,7 +54,7 @@ Inherit the GwtBootstrap3 module in your GWT module:
 
 ```xml
 <module>
-    <inherits name="com.svenjacobs.gwtbootstrap3.GwtBootstrap3"/>
+    <inherits name="org.gwtbootstrap3.GwtBootstrap3"/>
     ...
 </module>
 ```
@@ -70,7 +70,7 @@ Use the widgets in your UiBinder XML:
 ```xml
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
-             xmlns:b="urn:import:com.svenjacobs.gwtbootstrap3.client.ui">
+             xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
 
     <b:Container>
         <b:PageHeader>Yay buttons!</b:PageHeader>
@@ -105,7 +105,7 @@ If you have any questions, please refer to the Google Group above.
 
 ```xml
 <module>
-    <inherits name="com.svenjacobs.gwtbootstrap3.GwtBootstrap3"/>
+    <inherits name="org.gwtbootstrap3.GwtBootstrap3"/>
 
     <public path='resource'>
         <include name='css/*.css'/>
@@ -114,6 +114,18 @@ If you have any questions, please refer to the Google Group above.
 
     <stylesheet src='css/theme.css'/>
     <script src='js/theme.js'/>
+</module>
+```
+
+# Disabling default theme
+
+If for some reason you need to completely disable the serving of the internal bootstrap css, simply inherit the GwtBootstrap3NoTheme module
+instead of GwtBootstrap3.
+
+```xml
+<module>
+    <inherits name="org.gwtbootstrap3.GwtBootstrap3NoTheme"/>
+    ...
 </module>
 ```
 
@@ -165,7 +177,7 @@ JavaScript, see Bootstrap's [documentation](http://getbootstrap.com/).
 
 | Feature     | Status        | In Demo    |
 |-------------|---------------|------------|
-| Modal       | Supported     | No         |
+| Modal       | Supported     | Yes        |
 | Scrollspy   | Supported     | No         |
 | Tooltip     | Supported     | Yes        |
 | Popover     | Supported     | Yes        |
@@ -212,7 +224,3 @@ Compare this to the HTML version:
     </ul>
 </div>
 ```
-
-# Acknowledgement
-
-Huge thanks go to [Joshua Godi](https://github.com/jgodi) who added many missing components and reworked the library!

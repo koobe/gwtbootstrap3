@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.svenjacobs.gwtbootstrap3</groupId>
+    <groupId>org.gwtbootstrap3</groupId>
     <artifactId>gwtbootstrap3-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.5-SNAPSHOT</version>
     <name>GwtBootstrap3 Parent</name>
 
     <parent>
@@ -15,9 +15,9 @@
     </parent>
 
     <scm>
-        <connection>scm:git:git@github.com:svenjacobs/gwtbootstrap3.git</connection>
-        <developerConnection>scm:git:git@github.com:svenjacobs/gwtbootstrap3.git</developerConnection>
-        <url>git@github.com:svenjacobs/gwtbootstrap3.git</url>
+        <connection>scm:git:git@github.com:gwtbootstrap3/gwtbootstrap3.git</connection>
+        <developerConnection>scm:git:git@github.com:gwtbootstrap3/gwtbootstrap3.git</developerConnection>
+        <url>git@github.com:gwtbootstrap3/gwtbootstrap3.git</url>
     </scm>
 
     <licenses>
@@ -54,7 +54,6 @@
 
     <modules>
         <module>gwtbootstrap3</module>
-        <module>gwtbootstrap3-demo</module>
     </modules>
 
     <properties>
@@ -79,7 +78,7 @@
                 <configuration>
                     <licenseName>apache_v2</licenseName>
                     <inceptionYear>2013</inceptionYear>
-                    <organizationName>Sven Jacobs</organizationName>
+                    <organizationName>GwtBootstrap3</organizationName>
                     <projectName>GwtBootstrap3</projectName>
                     <includes>
                         <include>**/*.java</include>
