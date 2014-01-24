@@ -4,7 +4,7 @@ package org.gwtbootstrap3.client.ui;
  * #%L
  * GwtBootstrap3
  * %%
- * Copyright (C) 2013 GwtBootstrap3
+ * Copyright (C) 2013 - 2014 GwtBootstrap3
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,26 +23,33 @@ package org.gwtbootstrap3.client.ui;
 import com.google.gwt.user.client.DOM;
 import org.gwtbootstrap3.client.ui.base.ComplexWidget;
 import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
-import org.gwtbootstrap3.client.ui.constants.Styles;
 
 /**
- * @author Joshua Godi
+ * Container with the span tag so that you can do layouts like:
+ * <p/>
+ * <SpanPanel>
+ * <Icon/>
+ * <Text/>
+ * </SpanPanel>
+ * <p/>
+ * Please note, this doesn't enforce any requirements on the children. It is up to
+ * you to make sure you produce valid HTML code.
+ *
+ * @author godi
  */
-public class CarouselIndicator extends ComplexWidget {
+public class SpanPanel extends ComplexWidget implements HasResponsiveness {
 
-    public CarouselIndicator() {
-        setElement(DOM.createElement("li"));
+    public SpanPanel() {
+        setElement(DOM.createSpan());
     }
 
-    public void setDataTarget(final String dataTarget) {
-        getElement().setAttribute("data-target", dataTarget);
+    @Override
+    public void setVisibleOn(final String deviceSizeString) {
+        StyleHelper.setVisibleOn(this, deviceSizeString);
     }
 
-    public void setDataSlideTo(final String dataSlideTo) {
-        getElement().setAttribute("data-slide-to", dataSlideTo);
-    }
-
-    public void setActive(final boolean active) {
-        StyleHelper.toggleStyleName(this, active, Styles.ACTIVE);
+    @Override
+    public void setHiddenOn(final String deviceSizeString) {
+        StyleHelper.setHiddenOn(this, deviceSizeString);
     }
 }

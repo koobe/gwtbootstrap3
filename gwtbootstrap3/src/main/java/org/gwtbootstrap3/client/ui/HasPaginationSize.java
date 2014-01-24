@@ -1,10 +1,10 @@
-package org.gwtbootstrap3.client.ui.constants;
+package org.gwtbootstrap3.client.ui;
 
 /*
  * #%L
  * GwtBootstrap3
  * %%
- * Copyright (C) 2013 GwtBootstrap3
+ * Copyright (C) 2013 - 2014 GwtBootstrap3
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,32 +20,13 @@ package org.gwtbootstrap3.client.ui.constants;
  * #L%
  */
 
+import org.gwtbootstrap3.client.ui.constants.PaginationSize;
+
 /**
- * @author Joshua Godi
+ * @author godi
  */
-public enum InputType implements Type {
-    PASSWORD("password"),
-    DATETIME("datetime"),
-    DATETIME_LOCAL("datetime-local"),
-    DATE("date"),
-    MONTH("month"),
-    TIME("time"),
-    WEEK("week"),
-    NUMBER("number"),
-    EMAIL("email"),
-    URL("url"),
-    SEARCH("search"),
-    TEL("tel"),
-    TEXT("text"),
-    COLOR("color");
+public interface HasPaginationSize {
+    void setPaginationSize(PaginationSize paginationSize);
 
-    private final String type;
-
-    private InputType(final String type) {
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
-    }
+    PaginationSize getPaginationSize();
 }

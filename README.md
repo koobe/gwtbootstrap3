@@ -16,7 +16,7 @@ Add the dependency to your Maven POM:
 <dependency>
     <groupId>org.gwtbootstrap3</groupId>
     <artifactId>gwtbootstrap3</artifactId>
-    <version>0.4</version>
+    <version>0.5</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -27,7 +27,7 @@ or if you want to use the snapshot release:
 <dependency>
     <groupId>org.gwtbootstrap3</groupId>
     <artifactId>gwtbootstrap3</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.6-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -119,12 +119,22 @@ If you have any questions, please refer to the Google Group above.
 
 # Disabling default theme
 
-If for some reason you need to completely disable the serving of the internal bootstrap css, simply inherit the GwtBootstrap3NoTheme module
-instead of GwtBootstrap3.
+If for some reason you need to completely disable the serving of the internal Bootstrap CSS, simply inherit the `GwtBootstrap3NoTheme` module instead of `GwtBootstrap3`.
 
 ```xml
 <module>
     <inherits name="org.gwtbootstrap3.GwtBootstrap3NoTheme"/>
+    ...
+</module>
+```
+
+# Using a CDN for Resources
+
+If for some reason you need to completely serve the JS/CSS for your project from CDNs, simply inherit the `GwtBootstrap3CDN` module instead of `GwtBootstrap3`.
+
+```xml
+<module>
+    <inherits name="org.gwtbootstrap3.GwtBootstrap3CDN"/>
     ...
 </module>
 ```
@@ -142,7 +152,7 @@ JavaScript, see Bootstrap's [documentation](http://getbootstrap.com/).
 | Grid system | Supported           | Yes        |
 | Typography  | Supported           | Yes        |
 | Code        | Supported           | Yes        |
-| Tables      | Not supported       | No         |
+| Tables      | Supported           | Yes        |
 | Forms       | Supported           | Yes        |
 | Buttons     | Supported           | Yes        |
 | Images      | Supported           | Yes        |
@@ -160,7 +170,7 @@ JavaScript, see Bootstrap's [documentation](http://getbootstrap.com/).
 | Navs                                | Supported           | Yes        |
 | Navbar                              | Supported           | Yes        |
 | Breadcrumbs                         | Supported           | Yes        |
-| Pagination                          | Not supported       | No         |
+| Pagination                          | Supported           | Yes        |
 | Labels                              | Supported           | Yes        |
 | Badges                              | Supported           | Yes        |
 | Jumbotron                           | Supported           | Yes        |

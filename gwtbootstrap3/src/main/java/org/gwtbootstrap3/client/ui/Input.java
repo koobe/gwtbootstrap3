@@ -21,7 +21,10 @@ package org.gwtbootstrap3.client.ui;
  */
 
 import com.google.gwt.dom.client.Document;
+import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.uibinder.client.UiConstructor;
+import com.google.gwt.user.client.ui.HasEnabled;
+import com.google.gwt.user.client.ui.HasName;
 import org.gwtbootstrap3.client.ui.base.ComplexWidget;
 import org.gwtbootstrap3.client.ui.constants.InputType;
 import org.gwtbootstrap3.client.ui.constants.Styles;
@@ -29,7 +32,7 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
 /**
  * @author Joshua Godi
  */
-public class Input extends ComplexWidget implements HasInputType, HasPlaceholder {
+public class Input extends ComplexWidget implements HasEnabled, HasInputType, HasPlaceholder, HasFormValue, HasName {
 
     public Input() {
         setElement(Document.get().createElement("input"));
@@ -37,21 +40,31 @@ public class Input extends ComplexWidget implements HasInputType, HasPlaceholder
     }
 
     @UiConstructor
-    public Input(InputType type) {
+    public Input(final InputType type) {
         this();
         setType(type);
     }
 
-    public void setMin(String min) {
+    public void setMin(final String min) {
         getElement().setAttribute("min", min);
     }
 
-    public void setMax(String max) {
+    public void setMax(final String max) {
         getElement().setAttribute("max", max);
     }
 
     @Override
-    public void setType(InputType inputType) {
+    public void setEnabled(final boolean enabled) {
+        getElement().setPropertyBoolean("disabled", !enabled);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return !getElement().getPropertyBoolean("disabled");
+    }
+
+    @Override
+    public void setType(final InputType inputType) {
         getElement().setAttribute(TYPE, inputType.getType());
     }
 
@@ -71,5 +84,25 @@ public class Input extends ComplexWidget implements HasInputType, HasPlaceholder
     @Override
     public String getPlaceholder() {
         return getElement().getAttribute(PLACEHOLDER);
+    }
+
+    @Override
+    public String getFormValue() {
+        return InputElement.as(getElement()).getValue();
+    }
+
+    @Override
+    public void setFormValue(final String value) {
+        InputElement.as(getElement()).setValue(value);
+    }
+
+    @Override
+    public String getName() {
+        return InputElement.as(getElement()).getName();
+    }
+
+    @Override
+    public void setName(final String name) {
+        InputElement.as(getElement()).setName(name);
     }
 }

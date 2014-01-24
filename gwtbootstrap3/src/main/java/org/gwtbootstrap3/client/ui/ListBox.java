@@ -20,18 +20,35 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
-import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
+import org.gwtbootstrap3.client.ui.base.mixin.IdMixin;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
 /**
- * @author Joshua Godi
+ * Convenience derivation from GWT's ListBox that can have an ID.
+ *
+ * @author Sven Jacobs
+ * @see com.google.gwt.user.client.ui.ListBox
  */
-public class CarouselSlide extends Div {
-    public CarouselSlide() {
-        setStyleName(Styles.ITEM);
+public class ListBox extends com.google.gwt.user.client.ui.ListBox implements HasId {
+
+    private final IdMixin<ListBox> idMixin = new IdMixin<ListBox>(this);
+
+    public ListBox() {
+        setStyleName(Styles.FORM_CONTROL);
     }
 
-    public void setActive(final boolean active) {
-        StyleHelper.toggleStyleName(this, active, Styles.ACTIVE);
+    public ListBox(final boolean isMultipleSelect) {
+        super(isMultipleSelect);
+        setStyleName(Styles.FORM_CONTROL);
+    }
+
+    @Override
+    public void setId(final String id) {
+        idMixin.setId(id);
+    }
+
+    @Override
+    public String getId() {
+        return idMixin.getId();
     }
 }
